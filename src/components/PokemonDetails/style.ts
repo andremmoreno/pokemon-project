@@ -40,23 +40,21 @@ interface IColor {
   white: string
 }
 
-export const Card = styled.div<ICard>`
+export const Card = styled.div`
   display: flex;
-  width: 40%;
-  min-width: 200px;
-  height: 300px;
   border-radius: 10px;
   margin: 20px 10px;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
-  background-color:  ${(props) => colors[props.bgcolor as keyof IColor]}
 `
 
-export const ImgDiv = styled.div`
-  background-color: rgba(255, 255, 255, 0.6);
+export const ImgDiv = styled.div<ICard>`
+  background-color:  ${(props) => colors[props.bgcolor as keyof IColor] || '#F2ECDF'};
 	border-radius: 50%;
-	width: 150px;
+	width: 300px;
 	text-align: center;
+`
+
+export const StatusDiv = styled.div`
 `

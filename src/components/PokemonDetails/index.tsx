@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import api from "../../services/api";
+import React from "react";
 import { Heading, Image, Text } from '@chakra-ui/react'
-import { Card, ImgDiv } from "./style";
+import { Card, ImgDiv, StatusDiv } from "./style";
 
 interface ITypesPT {
   fire: string,
@@ -38,17 +37,11 @@ interface ITypes {
 }
 
 interface Props {
-  name: string,
+  info: IPokemon,
 }
 
-const PokemonCard: React.FC<Props> = ({ name }) => {
-  const [info, setInfo] = useState<IPokemon>()
+const PokemonDetails: React.FC<Props> = ({ info }) => {
 
-  useEffect(() => {
-    api.get(`/pokemon/${name}`).then(response => {
-      setInfo(response.data);
-    })
-  }, [name])
 
   const colors = {
     fire: 'Fogo',
@@ -69,28 +62,32 @@ const PokemonCard: React.FC<Props> = ({ name }) => {
   };
 
   return (
-    <Card to={`/${info?.name}`} bgcolor={ info?.types[0].type.name }>
-      <ImgDiv>
+    <Card>
+      <ImgDiv bgcolor={ info?.types[0].type.name }>
         <Image 
           src={ info?.sprites.front_default }
           alt={ info?.name }
-          boxSize='150px'
+          boxSize='300px'
         />
       </ImgDiv>
       <Heading 
         as='h2'
-        size='md'
+        size='xl'
       >
         { info?.name.replace(/^./, info?.name[0].toUpperCase()) }
       </Heading>
       <Text
         color='gray.600'
-        fontSize='sm'
+        fontSize='lg'
       >
-        { `Tipo: ${colors[info?.types[0].type.name as keyof ITypesPT] || 'Não definido'}` }
+        { `Tipo: ${colors[info?.types[0].type.name as keyof ITypesPT ] || 'Não definido'}` }
       </Text>
+
+      <StatusDiv>
+
+      </StatusDiv>
     </Card>
   )
 }
 
-export default PokemonCard;
+export default PokemonDetails;

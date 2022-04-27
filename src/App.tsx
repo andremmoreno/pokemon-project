@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
+import Details from './pages/Details';
 import Home from './pages/Home';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={ <Home /> } />
-        <Route path="/:name" element={ <h1>POKEMON DETAIL</h1> } />
+        <Route path="/:name" element={ <Details /> } />
       </Routes>
     </div>
   );
