@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PokemonCard from "../components/PokemonCard";
 import api from "../services/api";
-import { ArrowUpIcon } from '@chakra-ui/icons'
 import Logo from "../components/Logo";
 
 interface IPokemons {
