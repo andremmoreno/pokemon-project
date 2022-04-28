@@ -51,11 +51,6 @@ const Home = () => {
             size='xl'
           />
         </LoadingDiv>
-        <ToTop
-          onClick={ () => window.scrollTo(0, 0)}
-        >
-          <ArrowUpIcon w={8} h={8} color="red.500" />
-        </ToTop>
       </div>
     )
 }
@@ -76,13 +71,4 @@ const LoadingDiv = styled.div`
   height: 80px;
   display: flex;
   justify-content: center;
-`
-
-const ToTop = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 100px;
-  border: 1px solid red;
-  border-radius: 50%;
-  cursor: pointer;
 `
