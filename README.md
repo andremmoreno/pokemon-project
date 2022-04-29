@@ -21,4 +21,4 @@ O projeto consiste em uma listagem de pokemons recebidos pela [PokeAPI](https://
 
 # Deploy 
 
-Hospedado no Vercel: [LINK](https://pokemon-project-phi.vercel.app/)
+Hospedado no Vercel: [LINK](https://pokemon-project-gxvya9exr-andremmoreno.vercel.app/)
