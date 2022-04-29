@@ -1,6 +1,6 @@
 # Contexto
 
-O projeto consiste em uma listagem de pokemons recebidos pela [https://pokeapi.co/](PokeAPI). A aplicação possui as seguintes funcionalidades:
+O projeto consiste em uma listagem de pokemons recebidos pela [PokeAPI](https://pokeapi.co/). A aplicação possui as seguintes funcionalidades:
 - Listagem de pokemons com paginação automática de 10 em 10
 - Acesso a página de detalhes clicando no card ou pela URL
 
