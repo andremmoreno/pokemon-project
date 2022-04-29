@@ -65,6 +65,7 @@ const PokemonCard: React.FC<Props> = ({ name }) => {
     flying: 'Voador',
     fighting: 'Lutador',
     normal: 'Normal',
+    ghost: 'Fantasma',
     white: ''
   };
 

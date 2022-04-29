@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading, Image, Stat, StatLabel, StatNumber, Text } from '@chakra-ui/react'
-import { Card, ImgDiv, MainDetails, MoreInfo, StatusDiv } from "./style";
+import { Card, ImgDiv, MainDetails, MoreInfo, StatusDiv, TextTypes, TypesDiv } from "./style";
 
 interface ITypesPT {
   fire: string,
@@ -68,6 +68,7 @@ const PokemonDetails: React.FC<Props> = ({ info }) => {
     flying: 'Voador',
     fighting: 'Lutador',
     normal: 'Normal',
+    ghost: 'Fantasma',
     white: ''
   };
 
@@ -104,20 +105,35 @@ const PokemonDetails: React.FC<Props> = ({ info }) => {
         <div>
           <MoreInfo>
             <Text
-              fontSize='2xl'
+              fontSize='3xl'
+              padding='10px 0px'
             >
               { `Tipo: ${colors[info?.types[0].type.name as keyof ITypesPT ] || 'Não definido'}` }
             </Text>
             <Text
-              fontSize='2xl'
+              fontSize='3xl'
+              padding='10px 0px'
             >
               { `Tamanho: ${`${(info?.height / 10)}m`  || 'Não definido'}` }
             </Text>
             <Text
-              fontSize='2xl'
+              fontSize='3xl'
+              padding='10px 0px'
             >
               { `Peso: ${`${(info?.weight / 10)}kg`  || 'Não definido'}` }
             </Text>
+            <TypesDiv>
+              { info?.types.map((each) => {
+                return(
+                  <TextTypes
+                    fontSize='xl'
+                    bgcolor={ each.type.name }
+                  >
+                    { each.type.name.toLocaleUpperCase() }
+                  </TextTypes>
+                )
+              }) }
+            </TypesDiv>
           </MoreInfo>
         </div>
       </Card>

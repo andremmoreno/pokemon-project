@@ -16,6 +16,7 @@ const colors = {
   flying: '#F5F5F5',
   fighting: '#E6E0D4',
   normal: '#F5F5F5',
+  ghost: '#D5B2DE',
   white: '#FFF'
 };
 
@@ -38,6 +39,7 @@ interface IColor {
   flying: string,
   fighting: string,
   normal: string,
+  ghost: string,
   white: string
 }
 

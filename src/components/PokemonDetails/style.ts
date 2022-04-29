@@ -1,3 +1,4 @@
+import { Text } from "@chakra-ui/react";
 import styled from "styled-components";
 
 const colors = {
@@ -15,6 +16,7 @@ const colors = {
   flying: '#F5F5F5',
   fighting: '#E6E0D4',
   normal: '#F5F5F5',
+  ghost: '#D5B2DE',
   white: '#FFF'
 };
 
@@ -37,6 +39,7 @@ interface IColor {
   flying: string,
   fighting: string,
   normal: string,
+  ghost: string,
   white: string
 }
 
@@ -77,11 +80,26 @@ export const StatusDiv = styled.div`
 `
 
 export const MoreInfo = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #054f77; 
   color: #e2e1e1;
-  align-items: center;
   width: 300px;
-  margin: 0px 20px;
-  padding: 20px 20px 20px 60px;
+  margin: 0px 20px 20px 20px;
+  padding: 20px 0px;
+  border-radius: 10px;
+  align-items: center;
+`
+
+export const TypesDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const TextTypes = styled(Text)<ICard>`
+  background-color:  ${(props) => colors[props.bgcolor as keyof IColor] || '#F2ECDF'};
+  color: #000;
+  padding: 5px 10px;
+  margin: 10px 5px;
   border-radius: 10px;
 `
