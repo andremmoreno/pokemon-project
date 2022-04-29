@@ -7,7 +7,7 @@ O projeto consiste em uma listagem de pokemons recebidos pela [https://pokeapi.c
 # Instruções do projeto:
 
 1. Clone o repositório
-- `git clone `git@github.com:andremmoreno/pokemon-project.git`.
+- `git clone git@github.com:andremmoreno/pokemon-project.git`.
 
 2. Entrar na pasta
 - `cd pokemon-project`
