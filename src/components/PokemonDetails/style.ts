@@ -40,21 +40,48 @@ interface IColor {
   white: string
 }
 
-export const Card = styled.div`
+export const MainDetails = styled.div`
   display: flex;
-  border-radius: 10px;
-  margin: 20px 10px;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+`
+
+export const Card = styled.div`
+  display: flex;
+  max-width: 800px;
+  justify-content: center;
+  flex-wrap: wrap;
 `
 
 export const ImgDiv = styled.div<ICard>`
   background-color:  ${(props) => colors[props.bgcolor as keyof IColor] || '#F2ECDF'};
-	border-radius: 50%;
+	border-radius: 10px;
 	width: 300px;
 	text-align: center;
 `
 
 export const StatusDiv = styled.div`
+  display: flex;
+  text-align: center; 
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  width: 300px;
+  padding: 15px 0px;
+  border-radius: 10px;
+  background-color: #606163; 
+
+  dl {
+    width: 100px;
+  }
+`
+
+export const MoreInfo = styled.div`
+  background-color: #054f77; 
+  color: #e2e1e1;
+  align-items: center;
+  width: 300px;
+  margin: 0px 20px;
+  padding: 20px 20px 20px 60px;
+  border-radius: 10px;
 `

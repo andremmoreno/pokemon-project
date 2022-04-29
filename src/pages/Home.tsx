@@ -1,9 +1,9 @@
 import { Spinner } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import PokemonCard from "../components/PokemonCard";
 import api from "../services/api";
 import Logo from "../components/Logo";
+import { CardsDiv, LoadingDiv } from "./styles";
 
 interface IPokemons {
     name: string,
@@ -55,19 +55,3 @@ const Home = () => {
 }
 
 export default Home;
-
-const CardsDiv = styled.div`
-  display: flex; 
-  width: 70%;
-  max-width: 700px;
-  margin: 10px auto;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`
-
-const LoadingDiv = styled.div`
-  margin-bottom: 100px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-`

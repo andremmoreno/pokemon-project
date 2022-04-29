@@ -3,21 +3,32 @@ import { useParams } from "react-router-dom";
 import Logo from "../components/Logo";
 import PokemonDetails from "../components/PokemonDetails";
 import api from "../services/api";
+import { MainDetails } from "./styles";
 
 interface IPokemon {
   name: string,
   url: string,
   id: number,
+  height: number,
+  weight: number,
   sprites: {
     front_default: string,
   },
-  types: ITypes[]
+  types: ITypes[],
+  stats: IStats[],
 }
 
 interface ITypes {
-type: {
-  name: string,
+  type: {
+    name: string,
+  }
 }
+
+interface IStats {
+  base_stat: number,
+  stat: {
+    name: string,
+  }
 }
 
 const Details = () => {
@@ -31,10 +42,10 @@ const Details = () => {
     }, [name])
 
     return (
-      <div>
+      <MainDetails>
         <Logo />
         <PokemonDetails info={ info as IPokemon} />
-      </div>
+      </MainDetails>
     )
 }
 
